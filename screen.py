@@ -1,7 +1,7 @@
 import pyscreenshot as image_grab
 import matplotlib.pyplot as plt
 import datetime
-import os
+from filesistem import get_image_save_path
 
 
 def take_screen():
@@ -10,10 +10,11 @@ def take_screen():
 
     path = get_image_save_path()
     full_path = path + now + '.png'
+    filename = now + '.png'
 
     im.save(full_path)
 
-    return full_path
+    return filename
 
     # im.grab_to_file()
     #
@@ -22,20 +23,3 @@ def take_screen():
     # plt.imshow(img, cmap='gray', interpolation='bicubic')
     # plt.show()
     # plt.imsave()
-
-
-def get_image_save_path():
-    base_path = os.path.dirname(__file__)
-
-    try:
-        f = open(base_path + '/config/path_to_screen.txt', 'r')
-        path = f.read()
-        f.close()
-    except FileNotFoundError:
-        f = open(base_path + '/config/path_to_screen.txt', 'w')
-        path = input("Enter the path to screen folder: ")
-        path = path + '/'
-        f.write(path)
-        f.close()
-
-    return path

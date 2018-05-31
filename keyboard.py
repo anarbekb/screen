@@ -1,9 +1,11 @@
 from pynput import keyboard
 from screen import take_screen
+from filesistem import get_image_save_path
 from yd import file_upload
 from auth import get_token, reset_token
 import yadisk
-
+import socket
+from log import write_log
 
 def on_release(key):
     if key == keyboard.Key.scroll_lock:
@@ -16,8 +18,11 @@ def on_release(key):
             token = reset_token()
             y = yadisk.YaDisk(token=token)
 
-        full_file_path = take_screen()
-        file_upload(y, full_file_path, '/test')
+        filename = take_screen()
+        try:
+            file_upload(y, get_image_save_path() + filename, '/test/' + filename)
+        except socket.timeout:
+            write_log('Timeout error')
 
     if key == keyboard.Key.pause:
         # Stop listener
