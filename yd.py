@@ -21,3 +21,10 @@ def recursive_upload(y, from_dir, to_dir):
                 y.upload(in_path, file_path)
             except yadisk.exceptions.PathExistsError:
                 pass
+
+
+def file_upload(y, file, to_dir):
+    try:
+        y.upload(file, to_dir)
+    except yadisk.exceptions.PathExistsError:
+        pass

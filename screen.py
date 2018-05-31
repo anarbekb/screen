@@ -9,8 +9,11 @@ def take_screen():
     now = datetime.datetime.now().strftime("%m-%d-%Y-%H.%M.%S")
 
     path = get_image_save_path()
+    full_path = path + now + '.png'
 
-    im.save(path + now + '.png')
+    im.save(full_path)
+
+    return full_path
 
     # im.grab_to_file()
     #
