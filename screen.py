@@ -25,11 +25,11 @@ def get_image_save_path():
     base_path = os.path.dirname(__file__)
 
     try:
-        f = open(base_path + '/config/path_to_scrteen.txt', 'r')
+        f = open(base_path + '/config/path_to_screen.txt', 'r')
         path = f.read()
         f.close()
     except FileNotFoundError:
-        f = open(base_path + '/config/path_to_scrteen.txt', 'w')
+        f = open(base_path + '/config/path_to_screen.txt', 'w')
         path = input("Enter the path to screen folder: ")
         path = path + '/'
         f.write(path)
