@@ -1,4 +1,6 @@
 /venv
 /config/token.txt
 /config/path_to_screen.txt
+/config/path_to_screen_yd.txt
+/logs
 /.idea
