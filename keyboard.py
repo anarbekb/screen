@@ -7,11 +7,11 @@ import yadisk
 import socket
 from log import write_log
 import clipboard
+import notyfication
 
 
 def on_release(key):
     if key == keyboard.Key.scroll_lock:
-        print('Screen take')
         token = get_token()
 
         y = yadisk.YaDisk(token=token)
@@ -25,7 +25,7 @@ def on_release(key):
             yd.file_upload(y, get_image_save_path() + filename, yd.get_yd_dir() + filename)
             link = yd.publish(y, yd.get_yd_dir() + filename)
             clipboard.copy(link)
-            print('Date copy to clipboard')
+            notyfication.system_notify('Link copy to clipboard', link)
         except socket.timeout:
             write_log('Timeout error')
 
