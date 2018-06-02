@@ -6,6 +6,7 @@ from auth import get_token, reset_token
 import yadisk
 import socket
 from log import write_log
+import clipboard
 
 
 def on_release(key):
@@ -22,6 +23,9 @@ def on_release(key):
         filename = take_screen()
         try:
             yd.file_upload(y, get_image_save_path() + filename, yd.get_yd_dir() + filename)
+            link = yd.publish(y, yd.get_yd_dir() + filename)
+            clipboard.copy(link)
+            print('Date copy to clipboard')
         except socket.timeout:
             write_log('Timeout error')
 

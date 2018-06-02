@@ -1,3 +1,18 @@
-doc YandexDisk: http://yadisk.readthedocs.io/ru/latest/intro.html#receiving-token-with-confirmation-code
-doc pyscreenhot: http://pyscreenshot.readthedocs.io/en/latest/
-use python 3.5
+Screen
+========================
+
+**Doc**:
+
+Take screen: press Scroll Lock <br>
+Exit script: press Pause <br>
+
+doc YandexDisk:<br>
+http://yadisk.readthedocs.io/ru/latest/intro.html#receiving-token-with-confirmation-code <br>
+
+doc pyscreenhot:<br>
+http://pyscreenshot.readthedocs.io/en/latest/<br>
+
+**Requirements**:
+
+sudo apt-get install xclip <br>
+use python 3.5 <br>

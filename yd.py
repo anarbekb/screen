@@ -32,6 +32,13 @@ def file_upload(y, file, to_dir):
     print('Screen uploaded')
 
 
+def publish(y, path_file_yd):
+    y.publish(path_file_yd)
+    link = y.get_meta(path_file_yd)
+
+    return link.public_url
+
+
 def get_yd_dir():
     base_path = os.path.dirname(__file__)
 
