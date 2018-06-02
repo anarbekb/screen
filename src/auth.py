@@ -26,12 +26,14 @@ def auth():
 def get_token():
     base_path = os.path.dirname(__file__)
 
+    print(base_path)
+
     try:
-        f = open(base_path + '/config/token.txt', 'r')
+        f = open(base_path + '/../config/token.txt', 'r')
         token = f.read()
         f.close()
-    except FileNotFoundError:
-        f = open(base_path + '/config/token.txt', 'w')
+    except OSError:
+        f = open(base_path + '/../config/token.txt', 'w')
         token = auth()
         f.write(token)
         f.close()

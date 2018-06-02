@@ -1,5 +1,4 @@
 import pyscreenshot as image_grab
-import matplotlib.pyplot as plt
 import datetime
 from filesistem import get_image_save_path
 

@@ -43,13 +43,13 @@ def get_yd_dir():
     base_path = os.path.dirname(__file__)
 
     try:
-        f = open(base_path + '/config/path_to_screen_yd.txt', 'r')
+        f = open(base_path + '/../config/path_to_screen_yd.txt', 'r')
         path_yd = f.read()
         f.close()
     except OSError:
         log.write_log('File not found: /config/path_to_screen_yd.txt')
 
-        f = open(base_path + '/config/path_to_screen_yd.txt', 'w')
+        f = open(base_path + '/../config/path_to_screen_yd.txt', 'w')
         path_yd = input("Enter the path to screen in YandexDisk folder(simple: image/screen/): ")
         f.write(path_yd)
         f.close()

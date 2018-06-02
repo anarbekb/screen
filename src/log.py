@@ -5,7 +5,7 @@ log_name = 'log.txt'
 
 
 def write_log(message):
-    log_path = base_path = os.path.dirname(__file__) + '/logs/' + log_name
+    log_path = os.path.dirname(__file__) + '/../logs/' + log_name
     curren_date = datetime.datetime.now().strftime("%m-%d-%Y-%H.%M.%S")
 
     try:
