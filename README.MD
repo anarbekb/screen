@@ -3,6 +3,8 @@ Screen
 
 **Doc**:
 
+Work only in Ubuntu Unity and depends on command notify-send <br>
+
 Take screen: press Scroll Lock <br>
 Exit script: press Pause <br>
 

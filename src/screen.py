@@ -15,10 +15,3 @@ def take_screen():
 
     return filename
 
-    # im.grab_to_file()
-    #
-    # img = image_grab.grab()
-    #
-    # plt.imshow(img, cmap='gray', interpolation='bicubic')
-    # plt.show()
-    # plt.imsave()
