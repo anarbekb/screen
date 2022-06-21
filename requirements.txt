@@ -8,7 +8,7 @@ idna==2.6
 image==1.5.24
 kiwisolver==1.0.1
 matplotlib==2.2.2
-numpy==1.14.3
+numpy==1.22.0
 Pillow==8.1.1
 pynput==1.3.10
 pyparsing==2.2.0
